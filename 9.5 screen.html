@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9.5 Screen</title>
+  <link rel="stylesheet" href="styles/body.css">
+  <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+  <div>
+    <div class="destination">
+      <a href="#">
+        &#10094;Портфолио
+      </a>
+    </div>
+
+    <div class="main-section">
+      <div class="download-box">
+        <a href="#" class="upload-link" id="uploadLink">Загрузить файл</a>
+        <input type="file" class="file-input" id="fileInput">
+      </div>
+      <input id="project-name" type="text" placeholder="Название проекта...">
+      <input id="description" type="text" placeholder="Описание">
+      <div class="publication-box">
+        <button class="button">Опубликовать</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const uploadLink = document.getElementById('uploadLink');
+    const fileInput = document.getElementById('fileInput');
+
+    uploadLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        alert(`Вы выбрали файл: ${file.name}`);
+      }
+    });
+  </script>
+</body>
+</html>
